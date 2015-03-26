@@ -111,6 +111,3 @@ The documentation of the datetime picker is here : http://eonasdan.github.io/boo
 ## Notes
 
 The date format from ``` php 'array('format'=>'DD/MM/YYYY') ``` is used to set automatically the date format of Symfony in order to make compatible Symfony and JavaScript output.
-## Modify locale to moments - RECORDATORIO
-But there are some problems for example with ``` php MM``` which display "décembre" in PHP intl translation and "Decembre" in Bootstrap translation. That is why I edited js/locales/bootstrap-datetimepicker.fr.js
-
