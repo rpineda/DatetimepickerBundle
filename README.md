@@ -44,7 +44,7 @@ public function registerBundles()
 
 ``` yml
 # app/config/config.yml
-sc_datetimepicker:
+digitalframe_datetimepicker:
     picker: ~
 ```
 
