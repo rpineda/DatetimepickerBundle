@@ -1,7 +1,7 @@
 <?php
 
 /*
-* This file is part of the SCDatetimepickerBundle package.
+* This file is part of the DigitalframeDatetimepickerBundle package.
 *
 * (c) Stephane Collot
 *
@@ -9,7 +9,7 @@
 * file that was distributed with this source code.
 */
 
-namespace SC\DatetimepickerBundle\Form\Type;
+namespace Digitalframe\DatetimepickerBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormInterface;
@@ -61,14 +61,14 @@ class DatetimeType extends AbstractType
         $pickerOptions = array_merge($this->options, $options['pickerOptions']);
 
         //Set automatically the language
-        if(!isset($pickerOptions['language']))
-            $pickerOptions['language'] = \Locale::getDefault();
-        if($pickerOptions['language'] == 'en')
-            unset($pickerOptions['language']);
+        if(!isset($pickerOptions['locale']))
+            $pickerOptions['locale'] = \Locale::getDefault();
+        if($pickerOptions['locale'] == 'en')
+            unset($pickerOptions['locale']);
 
         //Set the defaut format of malot.fr/bootstrap-datetimepicker
         if(!isset($pickerOptions['format']))
-            $pickerOptions['format'] = 'mm/dd/yyyy HH:ii';
+            $pickerOptions['format'] = 'DD/MM/YYYY';
 
         if ($pickerOptions['formatter'] == 'php'){
             $pickerOptions['format'] = DatetimeType::convertIntlFormaterToMalot( $pickerOptions['format'] );
@@ -169,6 +169,6 @@ class DatetimeType extends AbstractType
      */
     public function getName()
     {
-        return 'collot_datetime';
+        return 'digitalframe_datetime';
     }
 }

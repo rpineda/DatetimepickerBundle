@@ -1,6 +1,6 @@
 <?php
 
-namespace SC\DatetimepickerBundle\DependencyInjection;
+namespace Digitalframe\DatetimepickerBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\Loader;
 /**
  * This is the class that loads and manages bundle configuration
  */
-class SCDatetimepickerExtension extends Extension
+class DigitalframeDatetimepickerExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -39,6 +39,6 @@ class SCDatetimepickerExtension extends Extension
      */
     private function registerPickerConfiguration(array $configs, ContainerBuilder $container)
     {
-        $container->setParameter('sc_datetimepicker.form.options', $configs['configs']);
+        $container->setParameter('digitalframe_datetimepicker.form.options', $configs['configs']);
     }
 }

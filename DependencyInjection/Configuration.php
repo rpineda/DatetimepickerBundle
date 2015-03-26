@@ -1,6 +1,6 @@
 <?php
 
-namespace SC\DatetimepickerBundle\DependencyInjection;
+namespace Digitalframe\DatetimepickerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -17,7 +17,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('stephane_collot_datetimepicker');
+        $rootNode = $treeBuilder->root('digitalframe_datetimepicker');
 
         $this->addPicker($rootNode);
 

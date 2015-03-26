@@ -10,19 +10,16 @@
 
 {% block button_javascript "" %}
 
-{% block collot_datetime_javascript %}
+{% block digitalframe_datetime_javascript %}
 {% spaceless %}
 
-    <script type="text/javascript" src="{{ asset('bundles/scdatetimepicker/js/bootstrap-datetimepicker.min.js') }}" charset="UTF-8"></script>
-    {% if pickerOptions.language is defined %}
-        <script type="text/javascript" src="{{ asset('bundles/scdatetimepicker/js/locales/bootstrap-datetimepicker.'~ pickerOptions.language ~'.js') }}" charset="UTF-8"></script>
-    {% endif %}
-    
+    <script type="text/javascript" src="{{ asset('bundles/digitalframedatetimepicker/js/bootstrap-datetimepicker.min.js') }}" charset="UTF-8"></script>
     <script type="text/javascript">
+        {% spaceless %}
         jQuery(document).ready(function($) {
             $field = $('#{% if widget != "single_text" %}datepicker_{% endif %}{{ id }}');
         
-            {% block collot_datetime_javascript_prototype %}
+            {% block digitalframe_datetime_javascript_prototype %}
 
                 {% if widget != "single_text" %}
                     var $year = $('#{{ form.year.vars.id }}');
@@ -40,7 +37,8 @@
 
             {% endblock %}
         });
+        {% endspaceless %}
     </script>
-    
+
 {% endspaceless %}
 {% endblock %}

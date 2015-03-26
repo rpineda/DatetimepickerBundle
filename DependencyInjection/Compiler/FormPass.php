@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace SC\DatetimepickerBundle\DependencyInjection\Compiler;
+namespace Digitalframe\DatetimepickerBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -29,7 +29,7 @@ class FormPass implements CompilerPassInterface
         $resources = $container->getParameter('twig.form.resources');
 
         foreach (array('div', 'jquery', 'stylesheet') as $template) {
-            $resources[] = 'SCDatetimepickerBundle:Form:' . $template . '_layout.html.twig';
+            $resources[] = 'DigitalframeDatetimepickerBundle:Form:' . $template . '_layout.html.twig';
         }
 
         $container->setParameter('twig.form.resources', $resources);

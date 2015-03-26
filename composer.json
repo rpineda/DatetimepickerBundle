@@ -1,5 +1,5 @@
 {
-    "name": "stephanecollot/datetimepicker-bundle",
+    "name": "digitalframe/datetimepicker-bundle",
     "version": "1.0.1",
     "description": "Symfony bundle for Bootstrap DateTime picker",
     "keywords": ["symfony", "bootstrap", "bundle", "picker", "datepicker", "timepicker"],
@@ -7,7 +7,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Stephane Collot"
+            "name": "Ricardo Pineda",
+            "email": "ricardo@digitalframe.ws"
         }
     ],
     "require": {
@@ -17,8 +18,8 @@
     },
     "autoload":     {
         "psr-0": {
-            "SC\\DatetimepickerBundle": ""
+            "Digitalframe\\DatetimepickerBundle": ""
         }
     },
-    "target-dir": "SC/DatetimepickerBundle"
+    "target-dir": "Digitalframe/DatetimepickerBundle"
 }

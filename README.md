@@ -1,8 +1,8 @@
 #DatetimepickerBundle
 
-This bundle implements the [Bootstrap DateTime Picker](https://github.com/smalot/bootstrap-datetimepicker) in a Form Type for Symfony 2.*. The bundle structure is inspired by GenemuFormBundle.
+This bundle implements the [Eonasdan Bootstrap DateTime Picker](https://github.com/Eonasdan/bootstrap-datetimepicker) in a Form Type for Symfony 2.*. The bundle structure is inspired by GenemuFormBundle and Fork of SCDatetimepickerBundle.
 
-Demo : http://www.malot.fr/bootstrap-datetimepicker/demo.php
+Demo : http://eonasdan.github.io/bootstrap-datetimepicker/
 
 Please feel free to contribute, to fork, to send merge request and to create ticket.
 
@@ -16,7 +16,7 @@ Add the following dependency to your composer.json file:
 {
     "require": {
 
-        "stephanecollot/datetimepicker-bundle": "dev-master"
+        "digitalframe/datetimepicker-bundle": "dev-master"
     }
 }
 ```
@@ -24,7 +24,7 @@ Add the following dependency to your composer.json file:
 and then run
 
 ```bash
-php composer.phar update stephanecollot/datetimepicker-bundle
+php composer.phar update digitalframe/datetimepicker-bundle
 ```
 
 ### Step 2: Enable the bundle
@@ -37,7 +37,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new SC\DatetimepickerBundle\SCDatetimepickerBundle(),
+        new Digitalframe\DatetimepickerBundle\DigitalframeDatetimepickerBundle(),
     );
 }
 ```
@@ -63,31 +63,13 @@ public function buildForm(FormBuilder $builder, array $options)
 {
     $builder
         // defaut options
-        ->add('createdAt', 'collot_datetime') 
+        ->add('createdAt', 'df_datetime')
         
         // full options
-        ->add('updatedAt', 'collot_datetime', array( 'pickerOptions' =>
-            array('format' => 'mm/dd/yyyy',
-                'weekStart' => 0,
-                'startDate' => date('m/d/Y'), //example
-                'endDate' => '01/01/3000', //example
-                'daysOfWeekDisabled' => '0,6', //example
-                'autoclose' => false,
-                'startView' => 'month',
-                'minView' => 'hour',
-                'maxView' => 'decade',
-                'todayBtn' => false,
-                'todayHighlight' => false,
-                'keyboardNavigation' => true,
-                'language' => 'en',
-                'forceParse' => true,
-                'minuteStep' => 5,
-                'pickerReferer ' => 'default', //deprecated
-                'pickerPosition' => 'bottom-right',
-                'viewSelect' => 'hour',
-                'showMeridian' => false,
-                'initialDate' => date('m/d/Y', 1577836800), //example
-                ))) ; 
+        ->add('updatedAt', 'df_datetime', array(
+            'locale' => 'es',
+            'format' => 'DD/MM/YYYY'
+        )) ;
 
 }
 ```
@@ -124,10 +106,11 @@ This allows better integration of web pages.
 
 ## Documentation
 
-The documentation of the datetime picker is here : http://www.malot.fr/bootstrap-datetimepicker/#options
+The documentation of the datetime picker is here : http://eonasdan.github.io/bootstrap-datetimepicker/Options/
 
 ## Notes
 
-The date format from ``` php 'pickerOptions' => array('format'=>'dd MM yyyy - HH:ii p') ``` is used to set automatically the date format of Symfony in order to make compatible Symfony and JavaScript output.
+The date format from ``` php 'array('format'=>'DD/MM/YYYY') ``` is used to set automatically the date format of Symfony in order to make compatible Symfony and JavaScript output.
+## Modify locale to moments - RECORDATORIO
 But there are some problems for example with ``` php MM``` which display "décembre" in PHP intl translation and "Decembre" in Bootstrap translation. That is why I edited js/locales/bootstrap-datetimepicker.fr.js
 
